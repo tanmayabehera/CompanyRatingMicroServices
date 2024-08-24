@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.microservice.jobservice.external.Company;
 import com.microservice.jobservice.external.Review;
 
-@FeignClient(name = "REVIEWSERVICE")
+@FeignClient(name = "REVIEWSERVICE", url = "{review-service.url}")
 public interface ReviewClient {
     @GetMapping("/review")
     List<Review> getReviews();
